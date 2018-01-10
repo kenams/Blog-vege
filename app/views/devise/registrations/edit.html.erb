@@ -1,0 +1,69 @@
+<div class="container" id="register_edit">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading title">
+          <h2 class="text-center">Editez votre profile</h2>
+        </div>
+        <div class="panel-body">
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+
+              <div class="form-group">
+                <%= f.label :lastname , "Nom" %>
+                <%= f.text_field :lastname, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :firstname, "Prénom" %>
+                <%= f.text_field :firstname, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true, class: "form-control" %>
+              </div>
+
+              <div class="text-center">
+                <%= image_tag @user.photo %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :photo, "Avatar" %>
+                <%= f.file_field :photo, autofocus: true, class: "form-control" %>
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+             <div class="form-group">
+                <%= f.label :password, "Mot de passe" %> <i>(laissez vide si vous ne voulez pas changer)</i>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password_confirmation, "Confirmez votre mot de passe" %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :current_password, "Ancien mot de passe" %> <i>(nous avons besoin de votre mot de passe actuel pour confirmer vos modifications)</i><br />
+                <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+              </div>
+
+                <%= f.submit "Editer", class: "btn btn-lg btn-block" %>
+            <% end %>
+            <% if current_user.user? %>
+              <br>
+              <div class="alert alert-danger">
+                <p><i class="fa fa-exclamation-triangle"></i> Attention cette action est irréversible !! </p>
+                <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete, class: "btn btn-lg btn-block btn-danger" %></p>
+              </div>
+            <% end %>
+        </div>
+        <div class="panel-heading"></div>
+      </div>
+    </div>
+  </div>
+</div>

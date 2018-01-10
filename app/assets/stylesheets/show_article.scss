@@ -1,0 +1,38 @@
+#show_article
+{
+  background-color: #fff;
+
+  .photo
+  {
+    width: 100%;
+    margin-right: 10px;
+  }
+  .comment_form
+  {
+    display: none;
+  }
+  .fa-pencil,
+  .fa-trash
+  {
+    font-size: 1.2em;
+  }
+  .infos_user
+  {
+    img
+    {
+      width: 50px;
+      margin-bottom: 5px;
+    }
+  }
+  #not_connected
+  {
+    a
+    {
+      color: #428BCA;
+      &:hover
+      {
+        color: #5BC0DE;
+      }
+    }
+  }
+}

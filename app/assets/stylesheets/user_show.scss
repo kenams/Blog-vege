@@ -1,0 +1,36 @@
+#user_show
+{
+	.detail_user
+	{
+		background-color: #fff;
+		padding: 20px 0;
+	}
+  img
+  {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .detail_comment
+  {
+    background-color: #fff;
+  }
+  tr td:nth-child(2)
+  {
+    width: 100%;
+  }
+  h3
+  {
+    padding-top: 20px;
+  }
+}
+
+
+#register_edit
+{
+  img
+  {
+    width: 100px;
+  }
+}

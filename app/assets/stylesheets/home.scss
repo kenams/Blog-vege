@@ -1,0 +1,38 @@
+#home
+{
+  .row
+  {
+    &:first-child
+    {
+      margin-bottom: 20px;
+      background-color: #fff;
+    }
+    .col-sm-4
+    {
+      margin-bottom: 20px;
+    }
+  }
+
+  img
+  {
+    width: 100%;
+  }
+
+  .text_carousel
+  {
+    padding: 30px;
+    line-height: 2em;
+    h1
+    {
+      margin-bottom: 30px;
+    }
+  }
+
+  .title
+  {
+    background-color: #fff;
+    height: 100px;
+    padding: 10px;
+
+  }
+}

@@ -1,0 +1,32 @@
+<% if notice %>
+  <div class="alert alert-info alert-dismissable animated tada fade in text-center">
+    <button class="close" data-dismiss="alert">&times;</button>
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+
+<h4 class="text-center">liste des commentaires</h4>
+<br>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Article</th>
+        <th>Texte</th>
+        <th>Auteur</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.article.title %></td>
+        <td><%= comment.text %></td>
+        <td><%= comment.user.firstname %> <%= comment.user.lastname %></td>
+        <td><%= link_to 'Supprimer', comment, method: :delete, data: { confirm: 'Êtes-vous sûr ??' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
